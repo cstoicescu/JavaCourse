@@ -10,6 +10,27 @@ public class BankAccount {
     private String email;
     private String phoneNumber;
 
+   public  BankAccount () {
+       this("RO414XXXXXXXXXXXX",0,"Default Name", "example_mail@gmail.com",
+               "+407xxxxxxxx");
+   }
+
+    public BankAccount(String accountNumber, double balance, String customerName, String email,
+                    String phoneNumber) {
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+        this.customerName = customerName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+    }
+
+    public BankAccount(String customerName, String email, String phoneNumber) {
+       this("RO40XXXXXXXXXXX",50,customerName,email,phoneNumber);
+       this.customerName = customerName;
+       this.email = email;
+       this.phoneNumber = phoneNumber;
+    }
+
     public void setAccountNumber ( String accountNumber) {
         this.accountNumber = accountNumber;
     }
@@ -43,17 +64,19 @@ public class BankAccount {
     }
 
     public void deposit (double amountOfMoney) {
-        System.out.println("Enter the amount of money you want to deposit");
         if(amountOfMoney > 0 )
             this.balance += amountOfMoney;
         else
             System.out.println("Invalid. Enter positive amount");
     }
     public void withdraw (double amountOfMoney) {
-        if (this.balance > 0 && this.balance > amountOfMoney && amountOfMoney > 0 )
+        if (this.balance > 0 && this.balance - amountOfMoney >= 0 )
             this.balance -= amountOfMoney;
         else
             System.out.println("Invalid");
     }
+
+
+
 
 }
