@@ -8,7 +8,10 @@ public class Minimum {
 
     public static void main(String[] args) {
 
-       int[] intArray = readIntegers(7);
+        System.out.println("Enter count");
+        int count = scanner.nextInt();
+        scanner.nextLine();
+       int[] intArray = readIntegers(count);
         System.out.println("Minimum element in the array is: " + findMin(intArray));
     }
 
