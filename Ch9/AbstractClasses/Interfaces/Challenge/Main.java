@@ -16,7 +16,7 @@ public class Main {
 //        loadObject(tim);
         System.out.println(tim);
 
-        ISaveble werewolf = new Monster("Werewolf", 20,40);
+        Saveble werewolf = new Monster("Werewolf", 20,40);
         System.out.println(((Monster) werewolf).getStrength());
         System.out.println(werewolf);
         saveObject(werewolf);
@@ -48,12 +48,12 @@ public class Main {
         return values;
     }
 
-    public static void saveObject(ISaveble objectToSave) {
+    public static void saveObject(Saveble objectToSave) {
         for(int i = 0 ; i < objectToSave.write().size(); i++)
             System.out.println("Saving " + objectToSave.write().get(i) + " storage device");
     }
 
-    public static void loadObject(ISaveble objectToLoad) {
+    public static void loadObject(Saveble objectToLoad) {
         ArrayList<String> values = readValues();
         objectToLoad.readList(values);
     }

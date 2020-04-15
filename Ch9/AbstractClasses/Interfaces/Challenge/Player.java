@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Getter @Setter
-public class Player implements ISaveble {
+public class Player implements Saveble {
     private String name;
     private int hitPoints;
     private int strength;

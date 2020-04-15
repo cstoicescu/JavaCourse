@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Setter @Getter
-public class Monster implements ISaveble{
+public class Monster implements Saveble {
 
     private String name;
     private int hitPoints;
