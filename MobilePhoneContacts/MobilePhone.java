@@ -7,10 +7,12 @@ import java.util.ArrayList;
 @Getter
 public class MobilePhone {
 
+    private String myName;
     private String myNumber;
     private ArrayList<Contacts> myContacts;
 
-    public MobilePhone(String myNumber) {
+    public MobilePhone(String myName,String myNumber) {
+        this.myName = myName;
         this.myNumber = myNumber;
         this.myContacts = new ArrayList<Contacts>();
     }

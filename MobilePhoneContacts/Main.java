@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Main {
     static Thread thread = new Thread();
     private static Scanner scanner = new Scanner ( System.in);
-    private static MobilePhone mobilePhone = new MobilePhone("+40732416473");
+    private static MobilePhone mobilePhone = new MobilePhone("Catalin Stoicescu","+40732416473");
 
     public static void main(String[] args)  throws InterruptedException {
 
@@ -111,6 +111,7 @@ public class Main {
                 thread.sleep(1000);
                 System.out.print(".");
             }
+            System.out.print("\n" + mobilePhone.getMyName() + "'s phone running");
         }
 
         private static void printActions() {
