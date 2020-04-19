@@ -2,6 +2,7 @@ package Ch10.Generics.GenericClasses;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 
 public class Main {
 
@@ -40,8 +41,16 @@ public class Main {
 
         Team<FootballPlayer> barcelona = new Team<>("Barcelona");
         Team<FootballPlayer> juventus = new Team<>("Juventus");
+        Team<FootballPlayer> atleticoMadrid  = new Team<>("Atletico Madrid");
+        Team<FootballPlayer> psg = new Team<> ("PSG");
+        psg.matchResult(realMadrid,4,2);
+        psg.matchResult(juventus, 3,3);
+        psg.matchResult(barcelona,1,5);
+        atleticoMadrid.matchResult(barcelona,3,1);
+        atleticoMadrid.matchResult(juventus,4,1);
         realMadrid.matchResult(juventus,2,2);
         realMadrid.matchResult(barcelona,4,1);
+        realMadrid.matchResult(atleticoMadrid,1,3);
 
     //    realMadrid.matchResult(newYorkYankees,4,5); // error bc added Team<T>  generic
 
@@ -49,10 +58,25 @@ public class Main {
         System.out.println(realMadrid.getTeamName() + " : " + realMadrid.ranking());
         System.out.println(juventus.getTeamName() + " : " + juventus.ranking());
         System.out.println(barcelona.getTeamName() + " : " + barcelona.ranking());
+        System.out.println(atleticoMadrid.getTeamName() + " : " + atleticoMadrid.ranking());
 
         System.out.println(juventus.compareTo(realMadrid));
 
-        ArrayList<Team> teams = new ArrayList<>();
-        Collections.sort(teams);
+//        ArrayList<Team> teams = new ArrayList<>();
+//
+//
+//        Collections.sort(teams);
+
+        LeagueTable<Team<FootballPlayer>> uefaLeague = new LeagueTable<>("UEFA CHAMPIONS LEAGUE");
+
+        uefaLeague.addTeam(barcelona);
+        uefaLeague.addTeam(juventus);
+        uefaLeague.addTeam(atleticoMadrid);
+        uefaLeague.addTeam(psg);
+        uefaLeague.addTeam(realMadrid);
+//        uefaLeague.addTeam(manchesterUnited);
+
+        uefaLeague.tableRankings();
+
     }
 }
